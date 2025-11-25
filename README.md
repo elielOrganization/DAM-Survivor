@@ -1,5 +1,9 @@
-Estructura del proyecto
+<details>
+<summary><strong>📦 Ver estructura completa</strong></summary>
 
+<br>
+
+```plaintext
 Assets/
 │
 ├── _Project/
@@ -9,14 +13,14 @@ Assets/
 │   │   ├── Player/
 │   │   │   ├── PlayerController.cs
 │   │   │   ├── PlayerHealth.cs
-│   │   │   ├── PlayerLevelSystem.cs          ← Subida de nivel
-│   │   │   └── PlayerDebugInput.cs           ← Comandos debug (Block B)
+│   │   │   ├── PlayerLevelSystem.cs
+│   │   │   └── PlayerDebugInput.cs
 │   │   │
-│   │   ├── Weapons/                          ← BLOQUE A + BLOQUE B
+│   │   ├── Weapons/
 │   │   │   ├── _Base/
 │   │   │   │   ├── WeaponBase.cs
 │   │   │   │   ├── ProjectileBase.cs
-│   │   │   │   ├── WeaponStats.cs            ← Level, daño, cooldown
+│   │   │   │   ├── WeaponStats.cs
 │   │   │   │   └── Damageable.cs
 │   │   │   │
 │   │   │   ├── FrostZone/
@@ -34,47 +38,40 @@ Assets/
 │   │   │   │   ├── MagicMissile.cs
 │   │   │   │   └── MagicWandLevelUp.cs
 │   │   │   │
-│   │   │   └── WeaponManager.cs              ← Inventario + obtención de armas
+│   │   │   └── WeaponManager.cs
 │   │   │
 │   │   ├── Enemies/
 │   │   │   ├── EnemyBase.cs
-│   │   │   ├── EnemyZangano.cs               ← Enemigo 1
-│   │   │   ├── EnemyCorredor.cs              ← Enemigo 2
-│   │   │   ├── EnemyTanque.cs                ← Enemigo 3
-│   │   │   ├── EnemyEnjambre.cs              ← Enemigo 4
+│   │   │   ├── EnemyZangano.cs
+│   │   │   ├── EnemyCorredor.cs
+│   │   │   ├── EnemyTanque.cs
+│   │   │   ├── EnemyEnjambre.cs
 │   │   │   ├── EnemySpawner.cs
-│   │   │   ├── WaveSystem.cs                 ← TODA la tabla de oleadas
-│   │   │   ├── EnemyLootDrop.cs              ← Botín variado
-│   │   │   └── EnemyFeedback.cs              ← Feedback de daño visual
+│   │   │   ├── WaveSystem.cs
+│   │   │   ├── EnemyLootDrop.cs
+│   │   │   └── EnemyFeedback.cs
 │   │   │
 │   │   ├── UI/
 │   │   │   ├── PauseMenu.cs
 │   │   │   ├── TitleScreenController.cs
-│   │   │   └── LevelUpPanelController.cs     ← Elección del superviviente (B9)
+│   │   │   └── LevelUpPanelController.cs
 │   │   │
 │   │   └── Game/
 │   │       ├── GameManager.cs
-│   │       └── CameraShake.cs                ← Bloque C (camera shake)
+│   │       └── CameraShake.cs
 │   │
 │   ├── Prefabs/
 │   │   ├── Player/
 │   │   ├── Weapons/
 │   │   ├── Projectiles/
 │   │   ├── Enemies/
-│   │   ├── Orbs/           ← Verde/Azul/Dorado
-│   │   ├── VFX/
+│   │   ├── Orbs/
 │   │   └── UI/
 │   │
 │   ├── Scenes/
-│   │   ├── MainMenu.unity
-│   │   └── Game.unity
 │   │
-│   ├── Materials/
-│   ├── Animations/
-│   ├── Audio/
-│   ├── Sprites/
-│   └── Fonts/
-│
-├── Packages/
-├── ProjectSettings/
-└── .gitignore
+│   └── Materials/
+│   
+└── (otros assets necesarios del proyecto)
+```
+</details>
