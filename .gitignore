@@ -1,0 +1,67 @@
+# ============================================
+# UNITY: IGNORAR ARCHIVOS Y CARPETAS INÚTILES
+# ============================================
+
+# Carpetas grandes generadas automáticamente
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+
+# Caché
+sysinfo.txt
+
+# ============================================
+# ARCHIVOS TEMPORALES / METADATA
+# ============================================
+*.tmp
+*.temp
+*.pidb
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.pidb.meta
+
+# ============================================
+# PROYECTO C# Y ENTORNOS DE DESARROLLO
+# ============================================
+
+# Visual Studio
+.vs/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+
+# Rider / JetBrains
+.idea/
+*.iml
+
+# VSCode
+.vscode/
+
+# ============================================
+# SISTEMAS DE CONTROL DE VERSIONES
+# ============================================
+# Paquetes descargados localmente
+Packages/manifest.json.meta
+Packages/packages-lock.json.meta
+
+# ============================================
+# TEXTURES GENERATED (no manual assets)
+# ============================================
+*.cubemap
+*.unitypackage
+
+# ============================================
+# GITKEEP (por si necesitas carpetas vacías)
+# ============================================
+!.gitkeep
