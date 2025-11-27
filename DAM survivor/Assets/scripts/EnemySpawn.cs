@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    /// <summary>
-    /// ///////////////////// Variables /////////////////////////
-    /// </summary>
     [Header("Configuración de Spawn")]
     [SerializeField]
     private float spawnRadius = 10f;
@@ -15,36 +12,78 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField]
     private Transform player;
 
+    [Header("Oleadas (WaveData ScriptableObjects)")]
     [SerializeField]
-    private List<DataOleadas> oleadas;
+    private List<WaveData> oleadas; 
 
-
-    
-    ////////////////////////////////////// Funciones Unity//////////////////
-    void Start()
+    private void Start()
     {
         StartCoroutine(GenerarOleadas());
     }
 
-    ///////////////////////////// Funciones Propias ////////////////////
 
-    private IEnumerator spawn(DataOleadas oleada)
+    ////////////////////////////////////////////////////////////////
+    //    FUNCIONES DE SPAWN
+    ////////////////////////////////////////////////////////////////
+
+    private IEnumerator SpawnGrupo(EnemyGroupData grupo)
     {
-        for (int i = 0; i < oleada.CantidadDeEnemigos; i++)
+        // CASO 1 — OLEADA INSTANTÁNEA
+        if (grupo.oleadaInstantanea)
         {
-            Vector2 randomPoint = Random.insideUnitCircle * spawnRadius;
-            Vector3 spawnPosition = player.position + new UnityEngine.Vector3(randomPoint.x, 0f, randomPoint.y);
-            Instantiate(oleada.EnemyPrefab, spawnPosition, Quaternion.identity);
-            yield return new WaitForSeconds(oleada.SpawnRate);
+            for (int i = 0; i < grupo.cantidadTotal; i++)
+            {
+                SpawnEnemy(grupo.enemyPrefab);
+            }
+
+            yield break; 
+        }
+
+        // CASO 2 — OLEADA NORMAL
+        int spawnCount = 0;
+
+        while (spawnCount < grupo.cantidadTotal)
+        {
+            for (int i = 0; i < grupo.cantidadPorRonda; i++)
+            {
+                if (spawnCount >= grupo.cantidadTotal)
+                    break;
+
+                SpawnEnemy(grupo.enemyPrefab);
+                spawnCount++;
+            }
+
+            yield return new WaitForSeconds(grupo.cadencia);
         }
     }
-    
-    public IEnumerator GenerarOleadas()
+
+
+    private void SpawnEnemy(GameObject enemy)
     {
-        foreach(DataOleadas oleadaActual in oleadas)
+        Vector2 randomPos = Random.insideUnitCircle * spawnRadius;
+        Vector3 spawnPos = player.position + new Vector3(randomPos.x, 0f, randomPos.y);
+
+        Instantiate(enemy, spawnPos, Quaternion.identity);
+    }
+
+
+    ////////////////////////////////////////////////////////////////
+    //    CONTROL GENERAL DE OLEADAS
+    ////////////////////////////////////////////////////////////////
+
+    private IEnumerator GenerarOleadas()
+    {
+        foreach (WaveData oleadaActual in oleadas)
         {
-            yield return new WaitForSeconds(oleadaActual.TiempoEntreOleadas);
-            StartCoroutine(spawn(oleadaActual));
+            // Mantengo tu "TiempoEntreOleadas" para cada oleada
+            yield return new WaitForSeconds(oleadaActual.tiempoEntreOleada);
+
+            // Recorre todos los grupos dentro de esta oleada
+            foreach (EnemyGroupData grupo in oleadaActual.grupos)
+            {
+                // Ejecuta el grupo
+                yield return StartCoroutine(SpawnGrupo(grupo));
+            }
         }
     }
 }
