@@ -9,8 +9,9 @@ public class MovimientoJugador : MonoBehaviour
 
     public Controles control;
 
+    public PauseMenu pauseMenu;   // ← arrastrar en el inspector
+
     ///////////////////////////////////// FUNCIONES UNITY /////////////////////////////////
-    /// 
     private void Awake()
     {
         control = new Controles();
@@ -20,35 +21,38 @@ public class MovimientoJugador : MonoBehaviour
     {
         control.Enable();
     }
-    
+
     private void OnDisable()
     {
         control.Disable();
     }
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
-{
-    if (puedeMoverse)
     {
-        // Coger el valor del vector 2 gracias a control
-        direccionPlana = control.Player.Move.ReadValue<Vector2>();
-        Vector3 direccionMovimiento = new Vector3(direccionPlana.x, 0f, direccionPlana.y);
-        direccionMovimiento.Normalize();
-
-        // Movemos el personaje
-        transform.position += direccionMovimiento * velocidadMovimiento * Time.deltaTime;
-
-        // Rotamos el personaje hacia la dirección de movimiento
-        if(direccionMovimiento != Vector3.zero)
+        // ----- PAUSA -----
+        // si la acción Pause se ha pulsado este frame
+        if (control.Player.pause.triggered)
         {
-            Quaternion rotacionDeseada = Quaternion.LookRotation(direccionMovimiento);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotacionDeseada, 10f * Time.deltaTime);
+            if (pauseMenu.juegoPausado)
+                pauseMenu.Reanudar();
+            else
+                pauseMenu.Pausar();
+        }
+
+        // ----- MOVIMIENTO -----
+        if (puedeMoverse)
+        {
+            direccionPlana = control.Player.Move.ReadValue<Vector2>();
+            Vector3 direccionMovimiento = new Vector3(direccionPlana.x, 0f, direccionPlana.y);
+            direccionMovimiento.Normalize();
+
+            transform.position += direccionMovimiento * velocidadMovimiento * Time.deltaTime;
+
+            if (direccionMovimiento != Vector3.zero)
+            {
+                Quaternion rotacionDeseada = Quaternion.LookRotation(direccionMovimiento);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotacionDeseada, 10f * Time.deltaTime);
+            }
         }
     }
-}
 }

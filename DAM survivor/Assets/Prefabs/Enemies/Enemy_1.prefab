@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5485626773499928987}
   - component: {fileID: 3430990680574245148}
   - component: {fileID: 5603699175607152559}
+  - component: {fileID: 3314785342595989248}
   - component: {fileID: 2553579618881760009}
   m_Layer: 0
   m_Name: Enemy_1
@@ -114,6 +115,21 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3314785342595989248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2790479158087932266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6805c7c29a336b744b7fc7998b256cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitFlash
+  rend: {fileID: 3430990680574245148}
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.1
 --- !u!114 &2553579618881760009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,5 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e4b9ae09dd6da478c69bdb25d247f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
+  hitFlash: {fileID: 3314785342595989248}
   Stats: {fileID: 11400000, guid: 399d00e68f5b5244abd329e5e6acbfc3, type: 2}
   exp: {fileID: 7507683321997703250, guid: 226f48d0e75d8924fad7a6ce7e656f29, type: 3}
