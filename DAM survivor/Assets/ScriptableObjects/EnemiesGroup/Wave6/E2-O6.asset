@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f90c1460a55ba549ac9ce620cfb7202, type: 3}
   m_Name: E2-O6
   m_EditorClassIdentifier: Assembly-CSharp::EnemyGroupData
-  enemyPrefab: {fileID: 0}
-  cantidadTotal: 0
-  cantidadPorRonda: 0
-  cadencia: 0
+  enemyPrefab: {fileID: 6328297908972248891, guid: e4045dd6cb2703e4991d0a1b5d10c2c4, type: 3}
+  cantidadTotal: 120
+  cantidadPorRonda: 40
+  cadencia: 3
   oleadaInstantanea: 0
