@@ -5,6 +5,8 @@ public class EnemyController : MonoBehaviour
     /// <summary>
     /// ////////////////////////////////// Variables ///////////////////////
     /// </summary>
+    public HitFlash hitFlash;   // referencia al efecto visual de daño
+
     //Referencia al jugador//
     private GameObject player;
 
@@ -50,18 +52,27 @@ public class EnemyController : MonoBehaviour
     }
 
     public void Recibirdano(int danio)
+{
+    int danioFinal = danio - defense;
+    if (danioFinal < 0)
     {
-        int danioFinal = danio - defense;
-        if (danioFinal < 0)
-        {
-            danioFinal = 0;
-        }
-        currentHP -= danioFinal;
-        if (currentHP <= 0)
-        {
-            Morir();
-        }
+        danioFinal = 0;
     }
+
+    currentHP -= danioFinal;
+
+    // Feedback visual de daño
+    if (hitFlash != null)
+    {
+        hitFlash.Flash();
+    }
+
+    if (currentHP <= 0)
+    {
+        Morir();
+    }
+}
+
 
     private void Morir()
     {
