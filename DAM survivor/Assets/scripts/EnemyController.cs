@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour
     private int damage;
     private int defense;
     private float speed;
+    private float currentSpeed;
     public GameObject exp;
     /// <summary>
     /// /////////////////////////////////// Funciones Unity ///////////////////////////////
@@ -30,6 +31,7 @@ public class EnemyController : MonoBehaviour
         damage = Stats.Damage;
         defense = Stats.Defense;
         speed = Stats.Speed;
+        currentSpeed = speed;
     }
     void Start()
     {
@@ -46,9 +48,18 @@ public class EnemyController : MonoBehaviour
             direccion.Normalize();
 
             //Moverme hacia el jugador
-            transform.position += direccion * speed * Time.deltaTime;
+            transform.position += direccion * currentSpeed * Time.deltaTime;
 
         }
+    }
+    public void ModificarVelocidad(float multiplicador)
+    {
+        currentSpeed = speed * multiplicador;
+    }
+
+    public void RestaurarVelocidad()
+    {
+        currentSpeed = speed;
     }
 
     public void Recibirdano(int danio)
