@@ -628,7 +628,7 @@ MonoBehaviour:
   - {fileID: 0}
   frostZonePrefab: {fileID: 3090614917832715894, guid: f82603e25e4755a4c867e68dbc8b6797, type: 3}
   orbitalShieldPrefab: {fileID: 8545024569844762104, guid: d4f0b8e7764e67d48ba38ef1e349a41d, type: 3}
-  magicWandPrefab: {fileID: 0}
+  magicWandPrefab: {fileID: 8769742602778828658, guid: c5515a568e69af543829cf0ac6441897, type: 3}
   slashPrefab: {fileID: 287363700558402179, guid: c8084aa77299a9d409804b30af858904, type: 3}
 --- !u!1 &832575517
 GameObject:

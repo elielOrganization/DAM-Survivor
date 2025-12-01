@@ -11,9 +11,11 @@ public class WeaponStats : ScriptableObject
     public float range = 5f;       // Frost radius, rango de target, etc.
     public float projectileSpeed = 10f;
 
-    [Header("Extras")]
+    [Header("Frost Zone Settings")]
     public float slowPercent = 0.3f; // Para Frost Zone, por ejemplo
     [Header("Orbital Shield Settings")]
     public int orbCount = 3;
+    [Header("Magic Wand Settings")]
+    public int maxTargets = 2;
 
 }

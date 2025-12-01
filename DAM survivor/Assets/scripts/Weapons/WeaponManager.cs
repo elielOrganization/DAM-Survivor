@@ -18,8 +18,10 @@ public class WeaponManager : MonoBehaviour
         //     AddWeapon(Instantiate(frostZonePrefab, transform.position, Quaternion.identity), 0);
         // if (slashPrefab != null)
         //     AddWeapon(Instantiate(slashPrefab, transform.position, Quaternion.identity), 0);
-        if (orbitalShieldPrefab != null)
-            AddWeapon(Instantiate(orbitalShieldPrefab, transform.position, Quaternion.identity), 0);
+        // if (orbitalShieldPrefab != null)
+        //     AddWeapon(Instantiate(orbitalShieldPrefab, transform.position, Quaternion.identity), 0);
+        if (magicWandPrefab != null)
+            AddWeapon(Instantiate(magicWandPrefab, transform.position, Quaternion.identity), 0);
     }
 
     private void Update()
