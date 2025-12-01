@@ -132,6 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a48753c8087e34db5e0f547a177ee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovimientoJugador
+  pauseMenu: {fileID: 0}
+  camara: {fileID: 0}
 --- !u!114 &3827901899673097933
 MonoBehaviour:
   m_ObjectHideFlags: 0

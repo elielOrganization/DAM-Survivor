@@ -1,17 +1,15 @@
 using UnityEngine;
 
-public class experiencia : MonoBehaviour
+public class Experiencia : MonoBehaviour
 {
-    public float exp;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public int exp; // valor del prefab
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerExperiencia>().AñadirExperiencia(exp);
+            Destroy(gameObject);
+        }
     }
 }

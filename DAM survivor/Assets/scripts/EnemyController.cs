@@ -21,6 +21,11 @@ public class EnemyController : MonoBehaviour
     private float speed;
     private float currentSpeed;
     public GameObject exp;
+    public GameObject OrbeVerde;
+    public GameObject OrbeAzul;
+    public GameObject OrbeDorado;
+
+    
     /// <summary>
     /// /////////////////////////////////// Funciones Unity ///////////////////////////////
     /// </summary>
@@ -86,10 +91,26 @@ public class EnemyController : MonoBehaviour
 
 
     private void Morir()
+{
+    SoltarOrbeConProbabilidad();
+    Destroy(gameObject);
+}
+
+    private void SoltarOrbeConProbabilidad()
+{
+    float random = Random.value;
+
+    if (random < 0.6f)
     {
-        Instantiate(exp, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-       
-        
+        Instantiate(OrbeVerde, transform.position, Quaternion.identity);
     }
+    else if (random < 0.9f)
+    {
+        Instantiate(OrbeAzul, transform.position, Quaternion.identity);
+    }
+    else
+    {
+        Instantiate(OrbeDorado, transform.position, Quaternion.identity);
+    }
+}
 }

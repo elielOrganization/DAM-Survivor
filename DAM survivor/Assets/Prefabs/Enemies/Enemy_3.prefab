@@ -126,5 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e4b9ae09dd6da478c69bdb25d247f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
+  hitFlash: {fileID: 0}
   Stats: {fileID: 11400000, guid: 080a6ca0d217c2e43953079cf765bf80, type: 2}
   exp: {fileID: 0}
+  OrbeVerde: {fileID: 3635470169573753618, guid: beedf01ddb82bf24bb677e11e376d41e, type: 3}
+  OrbeAzul: {fileID: 950793136257229478, guid: ce9689936c07e1a4cbdce32e4780ec5b, type: 3}
+  OrbeDorado: {fileID: 7507683321997703250, guid: 5f17ebd2fd79b06448bab55191c67b7e, type: 3}
