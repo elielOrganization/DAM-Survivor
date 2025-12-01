@@ -11,6 +11,8 @@ public class MovimientoJugador : MonoBehaviour
 
     public PauseMenu pauseMenu;   // ← arrastrar en el inspector
 
+    public Transform camara;
+
     ///////////////////////////////////// FUNCIONES UNITY /////////////////////////////////
     private void Awake()
     {
@@ -39,20 +41,31 @@ public class MovimientoJugador : MonoBehaviour
                 pauseMenu.Pausar();
         }
 
-        // ----- MOVIMIENTO -----
         if (puedeMoverse)
         {
             direccionPlana = control.Player.Move.ReadValue<Vector2>();
-            Vector3 direccionMovimiento = new Vector3(direccionPlana.x, 0f, direccionPlana.y);
-            direccionMovimiento.Normalize();
 
-            transform.position += direccionMovimiento * velocidadMovimiento * Time.deltaTime;
+            // Direcciones basadas en la cámara (X,Z)
+            Vector3 forwardCam = camara.forward;
+            forwardCam.y = 0;
+            forwardCam.Normalize();
 
-            if (direccionMovimiento != Vector3.zero)
+            Vector3 rightCam = camara.right;
+            rightCam.y = 0;
+            rightCam.Normalize();
+
+            // Movimiento relativo a la cámara
+            Vector3 direccionMovimiento = forwardCam * direccionPlana.y + rightCam * direccionPlana.x;
+
+            if (direccionMovimiento.sqrMagnitude > 0.001f)
             {
+                direccionMovimiento.Normalize();
+                transform.position += direccionMovimiento * velocidadMovimiento * Time.deltaTime;
+
                 Quaternion rotacionDeseada = Quaternion.LookRotation(direccionMovimiento);
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotacionDeseada, 10f * Time.deltaTime);
             }
         }
+
     }
 }

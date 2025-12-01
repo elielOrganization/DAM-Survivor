@@ -9,32 +9,43 @@ public class CamaraFollow : MonoBehaviour
     private float zoomMax = 2f;
     private Controles controles;
     private float suavizadoZoom = 10f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float suavizadoRotacion = 10f;   // NUEVO
 
     void Awake()
     {
         controles = new Controles();
-
     }
+
     private void OnEnable()
     {
         controles.Enable();
     }
+
     private void OnDisable()
     {
         controles.Disable();
     }
+
     void Start()
     {
         offset = transform.position - player.transform.position;
     }
-    // Update is called once per frame
+
     private void LateUpdate()
-    {
-        float scrollValue = controles.Camara.Zoom.ReadValue<float>();
-        zoom -= scrollValue / suavizadoZoom;
-        zoom = Mathf.Clamp(zoom, zoomMin, zoomMax);
-        Vector3 zoomFinal = offset * zoom;
-        transform.position = player.transform.position + zoomFinal;
-    }
+{
+    float scrollValue = controles.Camara.Zoom.ReadValue<float>();
+    zoom -= scrollValue / suavizadoZoom;
+    zoom = Mathf.Clamp(zoom, zoomMin, zoomMax);
+
+    // Offset base siempre relativo al jugador (tercera persona)
+    Vector3 zoomFinal = offset * zoom;
+    Vector3 offsetRotado = player.transform.rotation * zoomFinal;
+
+    // Posición: detrás del jugador
+    transform.position = player.transform.position + offsetRotado;
+
+    // Rotación: mira al jugador, pero NO toca nada del jugador
+    transform.LookAt(player.transform.position + Vector3.up * 1.5f);
+}
+
 }
