@@ -624,12 +624,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 690844249}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 9ecdcd1ba8c2cb74aa383c3c6c13a268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerExperience
   experienciaActual: 0
   experienciaMaxima: 20000
   barraExp: {fileID: 1329941779}
+=======
+  m_Script: {fileID: 11500000, guid: 1c0f896d4ea389442838e3bb8d220790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponManager
+  weaponSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  frostZonePrefab: {fileID: 3090614917832715894, guid: f82603e25e4755a4c867e68dbc8b6797, type: 3}
+  orbitalShieldPrefab: {fileID: 8545024569844762104, guid: d4f0b8e7764e67d48ba38ef1e349a41d, type: 3}
+  magicWandPrefab: {fileID: 0}
+  slashPrefab: {fileID: 287363700558402179, guid: c8084aa77299a9d409804b30af858904, type: 3}
+>>>>>>> 864880da0d880e810734857a2cac692f88c1888f
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,12 +1826,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 762330227812633392, guid: 890d146c54b4029469a1bafb754334af, type: 3}
+    - {fileID: 3827901899673097933, guid: 890d146c54b4029469a1bafb754334af, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1634499230982662517, guid: 890d146c54b4029469a1bafb754334af, type: 3}
+<<<<<<< HEAD
       insertIndex: 3
+=======
+      insertIndex: -1
+>>>>>>> 864880da0d880e810734857a2cac692f88c1888f
       addedObject: {fileID: 690844264}
   m_SourcePrefab: {fileID: 100100000, guid: 890d146c54b4029469a1bafb754334af, type: 3}
 --- !u!1660057539 &9223372036854775807

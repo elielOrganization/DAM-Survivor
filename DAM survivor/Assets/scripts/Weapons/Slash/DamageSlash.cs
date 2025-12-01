@@ -1,13 +1,18 @@
 using UnityEngine;
 
-public class Slash : MonoBehaviour
+public class DamageSlash : MonoBehaviour
 {
-    public int damage = 50;
+    private int damage;
     public float lifeTime = 0.5f;
 
     private void Start()
     {
         Destroy(gameObject, lifeTime);
+    }
+
+    public void Configure(int dmg)
+    {
+        damage = dmg;
     }
 
     private void OnTriggerEnter(Collider other)
