@@ -62,9 +62,15 @@ public class MovimientoJugador : MonoBehaviour
                 direccionMovimiento.Normalize();
                 transform.position += direccionMovimiento * velocidadMovimiento * Time.deltaTime;
 
-                Quaternion rotacionDeseada = Quaternion.LookRotation(direccionMovimiento);
-                transform.rotation = Quaternion.Slerp(transform.rotation, rotacionDeseada, 10f * Time.deltaTime);
+                // Solo rotar si el input es hacia adelante
+                if (direccionPlana.y > 0.1f || direccionPlana.x != 0)
+                {
+                    Quaternion rotacionDeseada = Quaternion.LookRotation(direccionMovimiento);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, rotacionDeseada, 10f * Time.deltaTime);
+                }
+                // Si el input es solo hacia atrás, no rota
             }
+
         }
 
     }
