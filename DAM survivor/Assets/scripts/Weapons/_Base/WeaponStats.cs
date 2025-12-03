@@ -1,21 +1,24 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "WeaponStats", menuName = "Weapons/Stats")]
 public class WeaponStats : ScriptableObject
 {
-    [Header("Daño / Ritmo")]
-    public int damage = 10;
-    public float cooldown = 1f;
+    [Header("Niveles del Arma")]
+    public List<int> damagePerLevel = new List<int>();            // nivel 1, 2, 3...
+    public List<float> cooldownPerLevel = new List<float>();
+    public List<float> rangePerLevel = new List<float>();
+    public List<float> projectileSpeedPerLevel = new List<float>();
 
-    [Header("Rango / Tamaño")]
-    public float range = 5f;       // Frost radius, rango de target, etc.
-    public float projectileSpeed = 10f;
+    [Header("Slash Levels")]
+    public float[] slashScalePerLevel; 
 
-    [Header("Frost Zone Settings")]
-    public float slowPercent = 0.3f; // Para Frost Zone, por ejemplo
-    [Header("Orbital Shield Settings")]
-    public int orbCount = 3;
-    [Header("Magic Wand Settings")]
-    public int maxTargets = 2;
+    [Header("Frost Zone Levels")]
+    public List<float> slowPercentPerLevel = new List<float>();
 
+    [Header("Orbital Shield Levels")]
+    public List<int> orbCountPerLevel = new List<int>();
+
+    [Header("Magic Wand Levels")]
+    public List<int> maxTargetsPerLevel = new List<int>();
 }

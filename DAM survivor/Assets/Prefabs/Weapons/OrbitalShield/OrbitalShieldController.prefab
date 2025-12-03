@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: debc04c1c6480174e8f31add1ff39efb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrbitalShieldController
-  stats: {fileID: 11400000, guid: 774ff92d877d4e8478aadd440c36b34e, type: 2}
+  stats: {fileID: 11400000, guid: 9ea04742d57cffc4188c9305a905693c, type: 2}
+  level: 3
   orbPrefab: {fileID: 6921025287727868972, guid: 5f3e7a221575bef488f540de4f92d866, type: 3}
-  orbCount: 3

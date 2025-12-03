@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce172fdf5f5a404a92be79227867c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlashController
-  stats: {fileID: 11400000, guid: 6c1218b8f47b99e4cb4fcbe3156ddaa3, type: 2}
-  slashPrefab: {fileID: 7505180855947079775, guid: 4e3302c093a974649aafd50392241bcf, type: 3}
+  stats: {fileID: 11400000, guid: 1299ec80ff391db4f87e0e55e8c7b05d, type: 2}
+  level: 1
+  slashPrefab: {fileID: 2733898266756352899, guid: 4e3302c093a974649aafd50392241bcf, type: 3}

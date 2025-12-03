@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7fa575299e9594ea8238ca3b59fcae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrostZoneController
-  stats: {fileID: 11400000, guid: f003023dcb17ad448be32039b5772709, type: 2}
+  stats: {fileID: 11400000, guid: 54043eb159ca95b449fd69a42753c7c2, type: 2}
+  level: 1
   frostZonePrefab: {fileID: 7723358327002966934, guid: 57dd88934c689db4ba637fef5323a2f8, type: 3}

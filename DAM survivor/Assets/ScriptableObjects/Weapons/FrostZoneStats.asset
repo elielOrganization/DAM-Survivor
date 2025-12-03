@@ -12,10 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7054ec4543a86974cab0358921386ba0, type: 3}
   m_Name: FrostZoneStats
   m_EditorClassIdentifier: Assembly-CSharp::WeaponStats
-  damage: 50
-  cooldown: 1
-  range: 6
-  projectileSpeed: 10
-  slowPercent: 0.9
-  orbCount: 0
-  maxTargets: 2
+  damagePerLevel: 1400000014000000
+  cooldownPerLevel:
+  - 1
+  - 1
+  rangePerLevel:
+  - 6
+  - 7
+  projectileSpeedPerLevel:
+  - 0
+  slowPercentPerLevel:
+  - 0.3
+  - 0.9
+  orbCountPerLevel: 
+  maxTargetsPerLevel: 

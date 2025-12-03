@@ -12,9 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7054ec4543a86974cab0358921386ba0, type: 3}
   m_Name: OrbitalShieldStats
   m_EditorClassIdentifier: Assembly-CSharp::WeaponStats
-  damage: 10
-  cooldown: 1
-  range: 2
-  projectileSpeed: 100
-  slowPercent: 0
-  orbCount: 3
+  damagePerLevel: 010000000200000028000000
+  cooldownPerLevel:
+  - 1
+  - 1
+  - 1
+  rangePerLevel:
+  - 3
+  - 3
+  - 3
+  projectileSpeedPerLevel:
+  - 40
+  - 40
+  - 400
+  slowPercentPerLevel: []
+  orbCountPerLevel: 030000000300000004000000
+  maxTargetsPerLevel: 

@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aaff9c8484c83147ade5dc1fc7f6a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MagicWandController
-  stats: {fileID: 11400000, guid: d3ee35968dbea844abcae0a25cc59d2f, type: 2}
+  stats: {fileID: 11400000, guid: 2e5493a40f7c7d241923a5ff47e3dd75, type: 2}
+  level: 1
   projectilePrefab: {fileID: 8858551466859413305, guid: 93665ed08184e1e4e94495ad9cf78469, type: 3}

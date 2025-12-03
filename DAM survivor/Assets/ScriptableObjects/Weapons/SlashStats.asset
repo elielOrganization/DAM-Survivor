@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7054ec4543a86974cab0358921386ba0, type: 3}
   m_Name: SlashStats
   m_EditorClassIdentifier: Assembly-CSharp::WeaponStats
-  damage: 200
-  cooldown: 1
-  range: 0
-  projectileSpeed: 0
-  slowPercent: 0
-  orbCount: 0
+  damagePerLevel: 0a0000000a000000
+  cooldownPerLevel:
+  - 3
+  - 1
+  rangePerLevel: []
+  projectileSpeedPerLevel: []
+  slashScalePerLevel:
+  - 1
+  - 10
+  slowPercentPerLevel: []
+  orbCountPerLevel: 
+  maxTargetsPerLevel: 
