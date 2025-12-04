@@ -9,6 +9,7 @@ public abstract class WeaponBase : MonoBehaviour
     protected float cooldownTimer = 0f;
 
     [Header("Nivel del arma")]
+    [Range(1, 10)]
     public int level = 1;   // por si quieres usar niveles más adelante
 
     // Inicialización del arma cuando se equipa
