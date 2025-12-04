@@ -1409,19 +1409,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Salir
       objectReference: {fileID: 0}
+    - target: {fileID: 1046453321739641368, guid: e05351922bd726b4e89d36a066b99793, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046453321739641368, guid: e05351922bd726b4e89d36a066b99793, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0904a347089e75341843dac350f0c114, type: 3}
+    - target: {fileID: 1046453321739641368, guid: e05351922bd726b4e89d36a066b99793, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1618258661444137216, guid: e05351922bd726b4e89d36a066b99793, type: 3}
       propertyPath: m_Text
-      value: 'CONTINUAR
-
-'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1954449807449840084, guid: e05351922bd726b4e89d36a066b99793, type: 3}
       propertyPath: m_Name
       value: Continuar
       objectReference: {fileID: 0}
+    - target: {fileID: 1954449807449840084, guid: e05351922bd726b4e89d36a066b99793, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3133504666460467463, guid: e05351922bd726b4e89d36a066b99793, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4201887768359830463, guid: e05351922bd726b4e89d36a066b99793, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1453,7 +1467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5867736049431388656, guid: e05351922bd726b4e89d36a066b99793, type: 3}
       propertyPath: m_Text
-      value: SALIR
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6228886957680459921, guid: e05351922bd726b4e89d36a066b99793, type: 3}
       propertyPath: m_Type
@@ -1462,10 +1476,14 @@ PrefabInstance:
     - target: {fileID: 6228886957680459921, guid: e05351922bd726b4e89d36a066b99793, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300004, guid: 2e8e0326cef2ff14c968b6e7bdd381b5, type: 3}
+      objectReference: {fileID: 21300000, guid: d47963335bb9a86418ed81e5b5f596c2, type: 3}
     - target: {fileID: 7065958875230741871, guid: e05351922bd726b4e89d36a066b99793, type: 3}
       propertyPath: m_Name
       value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7602309508893818758, guid: e05351922bd726b4e89d36a066b99793, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7657548014152591694, guid: e05351922bd726b4e89d36a066b99793, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1542,7 +1560,7 @@ PrefabInstance:
     - target: {fileID: 8107324608956707207, guid: e05351922bd726b4e89d36a066b99793, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2e8e0326cef2ff14c968b6e7bdd381b5, type: 3}
+      objectReference: {fileID: 21300000, guid: 52cbcaac386a9f640a8ce18f225f1ad0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
