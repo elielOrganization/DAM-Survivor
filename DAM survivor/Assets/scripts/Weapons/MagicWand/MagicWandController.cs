@@ -18,7 +18,6 @@ public class MagicWandController : WeaponBase
         lastLevel = level;
     }
 
-
     // ---------------------------------------------------------
     // Disparo automático por cooldown
     // ---------------------------------------------------------
