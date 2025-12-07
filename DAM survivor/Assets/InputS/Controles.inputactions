@@ -23,6 +23,42 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "LevelUp1",
+                    "type": "Button",
+                    "id": "fbe4d79a-aeb7-40aa-8d58-379a3ee3969d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LevelUp2",
+                    "type": "Button",
+                    "id": "8918b0de-cdd1-454d-abcd-7ed6736933d4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LevelUp3",
+                    "type": "Button",
+                    "id": "114a044f-5fb3-4a7f-9135-167f1122b4a5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LevelUp4",
+                    "type": "Button",
+                    "id": "4501a468-1a9d-4474-90cf-ee5f9db5da92",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -100,6 +136,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0a1dcd1-ae0a-4961-a01f-09527d93b46e",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LevelUp1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9d5e083e-e7dd-48aa-8857-0c5c5a6ef93f",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LevelUp2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "794c2712-4625-4073-b0b7-67d0ecf4b469",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LevelUp3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7cd16d97-df67-4427-a38e-fa5c5cb1ce6e",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LevelUp4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

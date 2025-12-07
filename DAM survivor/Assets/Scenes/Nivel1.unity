@@ -651,6 +651,22 @@ MonoBehaviour:
   experienciaActual: 0
   experienciaMaxima: 2000
   barraExp: {fileID: 1590008197}
+--- !u!114 &690844284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690844249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f996de7d17a5d6846a60e6e00f9015fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DebugLevel
+  levelUp1: {fileID: -5602815951728250278, guid: 7a43bffbd6b697f45bb9773127728d19, type: 3}
+  levelUp2: {fileID: -4656667019995762028, guid: 7a43bffbd6b697f45bb9773127728d19, type: 3}
+  levelUp3: {fileID: 265773015438335128, guid: 7a43bffbd6b697f45bb9773127728d19, type: 3}
+  levelUp4: {fileID: -3312007377824081531, guid: 7a43bffbd6b697f45bb9773127728d19, type: 3}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63320fd7f7efbd142b37d989d19f6564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawn
-  spawnRadius: 10
+  spawnRadius: 20
   player: {fileID: 690844253}
   oleadas:
   - {fileID: 11400000, guid: 5381d3e7ee1b7b341b17bba7dfaf9890, type: 2}
@@ -1644,6 +1660,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1634499230982662517, guid: 890d146c54b4029469a1bafb754334af, type: 3}
       insertIndex: -1
       addedObject: {fileID: 690844264}
+    - targetCorrespondingSourceObject: {fileID: 1634499230982662517, guid: 890d146c54b4029469a1bafb754334af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 690844284}
   m_SourcePrefab: {fileID: 100100000, guid: 890d146c54b4029469a1bafb754334af, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

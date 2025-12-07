@@ -10,7 +10,8 @@ public abstract class WeaponBase : MonoBehaviour
 
     [Header("Nivel del arma")]
     [Range(1, 10)]
-    public int level = 1;   // por si quieres usar niveles más adelante
+    public int level = 1;
+    private int maxLevel = 10;
 
     // Inicialización del arma cuando se equipa
     public virtual void Initialize(WeaponManager mgr)
@@ -33,8 +34,9 @@ public abstract class WeaponBase : MonoBehaviour
     // cada arma concreta decide qué hacer con ese nivel
     public virtual void LevelUp()
     {
+        if (level >= maxLevel)
+            return;
+
         level++;
-        // Aquí NO tocamos stats directamente.
-        // Cada arma hija puede overridear esto si quiere.
     }
 }

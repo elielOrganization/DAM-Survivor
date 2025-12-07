@@ -109,6 +109,42 @@ public partial class @Controles: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LevelUp1"",
+                    ""type"": ""Button"",
+                    ""id"": ""fbe4d79a-aeb7-40aa-8d58-379a3ee3969d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LevelUp2"",
+                    ""type"": ""Button"",
+                    ""id"": ""8918b0de-cdd1-454d-abcd-7ed6736933d4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LevelUp3"",
+                    ""type"": ""Button"",
+                    ""id"": ""114a044f-5fb3-4a7f-9135-167f1122b4a5"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LevelUp4"",
+                    ""type"": ""Button"",
+                    ""id"": ""4501a468-1a9d-4474-90cf-ee5f9db5da92"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -188,6 +224,50 @@ public partial class @Controles: IInputActionCollection2, IDisposable
                     ""action"": ""pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0a1dcd1-ae0a-4961-a01f-09527d93b46e"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LevelUp1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9d5e083e-e7dd-48aa-8857-0c5c5a6ef93f"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LevelUp2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""794c2712-4625-4073-b0b7-67d0ecf4b469"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LevelUp3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7cd16d97-df67-4427-a38e-fa5c5cb1ce6e"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LevelUp4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -226,6 +306,10 @@ public partial class @Controles: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_pause = m_Player.FindAction("pause", throwIfNotFound: true);
+        m_Player_LevelUp1 = m_Player.FindAction("LevelUp1", throwIfNotFound: true);
+        m_Player_LevelUp2 = m_Player.FindAction("LevelUp2", throwIfNotFound: true);
+        m_Player_LevelUp3 = m_Player.FindAction("LevelUp3", throwIfNotFound: true);
+        m_Player_LevelUp4 = m_Player.FindAction("LevelUp4", throwIfNotFound: true);
         // Camara
         m_Camara = asset.FindActionMap("Camara", throwIfNotFound: true);
         m_Camara_Zoom = m_Camara.FindAction("Zoom", throwIfNotFound: true);
@@ -312,6 +396,10 @@ public partial class @Controles: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_pause;
+    private readonly InputAction m_Player_LevelUp1;
+    private readonly InputAction m_Player_LevelUp2;
+    private readonly InputAction m_Player_LevelUp3;
+    private readonly InputAction m_Player_LevelUp4;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -331,6 +419,22 @@ public partial class @Controles: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/pause".
         /// </summary>
         public InputAction @pause => m_Wrapper.m_Player_pause;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/LevelUp1".
+        /// </summary>
+        public InputAction @LevelUp1 => m_Wrapper.m_Player_LevelUp1;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/LevelUp2".
+        /// </summary>
+        public InputAction @LevelUp2 => m_Wrapper.m_Player_LevelUp2;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/LevelUp3".
+        /// </summary>
+        public InputAction @LevelUp3 => m_Wrapper.m_Player_LevelUp3;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/LevelUp4".
+        /// </summary>
+        public InputAction @LevelUp4 => m_Wrapper.m_Player_LevelUp4;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -363,6 +467,18 @@ public partial class @Controles: IInputActionCollection2, IDisposable
             @pause.started += instance.OnPause;
             @pause.performed += instance.OnPause;
             @pause.canceled += instance.OnPause;
+            @LevelUp1.started += instance.OnLevelUp1;
+            @LevelUp1.performed += instance.OnLevelUp1;
+            @LevelUp1.canceled += instance.OnLevelUp1;
+            @LevelUp2.started += instance.OnLevelUp2;
+            @LevelUp2.performed += instance.OnLevelUp2;
+            @LevelUp2.canceled += instance.OnLevelUp2;
+            @LevelUp3.started += instance.OnLevelUp3;
+            @LevelUp3.performed += instance.OnLevelUp3;
+            @LevelUp3.canceled += instance.OnLevelUp3;
+            @LevelUp4.started += instance.OnLevelUp4;
+            @LevelUp4.performed += instance.OnLevelUp4;
+            @LevelUp4.canceled += instance.OnLevelUp4;
         }
 
         /// <summary>
@@ -380,6 +496,18 @@ public partial class @Controles: IInputActionCollection2, IDisposable
             @pause.started -= instance.OnPause;
             @pause.performed -= instance.OnPause;
             @pause.canceled -= instance.OnPause;
+            @LevelUp1.started -= instance.OnLevelUp1;
+            @LevelUp1.performed -= instance.OnLevelUp1;
+            @LevelUp1.canceled -= instance.OnLevelUp1;
+            @LevelUp2.started -= instance.OnLevelUp2;
+            @LevelUp2.performed -= instance.OnLevelUp2;
+            @LevelUp2.canceled -= instance.OnLevelUp2;
+            @LevelUp3.started -= instance.OnLevelUp3;
+            @LevelUp3.performed -= instance.OnLevelUp3;
+            @LevelUp3.canceled -= instance.OnLevelUp3;
+            @LevelUp4.started -= instance.OnLevelUp4;
+            @LevelUp4.performed -= instance.OnLevelUp4;
+            @LevelUp4.canceled -= instance.OnLevelUp4;
         }
 
         /// <summary>
@@ -530,6 +658,34 @@ public partial class @Controles: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPause(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "LevelUp1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLevelUp1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "LevelUp2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLevelUp2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "LevelUp3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLevelUp3(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "LevelUp4" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLevelUp4(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Camara" which allows adding and removing callbacks.

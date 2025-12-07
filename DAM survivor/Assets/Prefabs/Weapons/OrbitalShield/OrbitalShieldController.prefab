@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrbitalShieldController
   stats: {fileID: 11400000, guid: 9ea04742d57cffc4188c9305a905693c, type: 2}
-  level: 3
+  level: 1
   orbPrefab: {fileID: 6921025287727868972, guid: 5f3e7a221575bef488f540de4f92d866, type: 3}
