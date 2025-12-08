@@ -31,6 +31,8 @@ public class MovimientoJugador : MonoBehaviour
 
     void Update()
     {
+        if (LevelUpManager.IsLevelUpOpen)
+        return;
         // ----- PAUSA -----
         // si la acción Pause se ha pulsado este frame
         if (control.Player.pause.triggered)
