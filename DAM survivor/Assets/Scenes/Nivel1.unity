@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponManager
   weaponSlots:
-  - {fileID: 3090614917832715894, guid: f82603e25e4755a4c867e68dbc8b6797, type: 3}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -903,6 +903,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 975137758191a61499715ed93c15e046, type: 2}
   - {fileID: 11400000, guid: 792eb76888ca67445a5dcf6c11c7d2ac, type: 2}
   - {fileID: 11400000, guid: 610cff4ac42bd8a49a9d4c7590cf0027, type: 2}
+  - {fileID: 11400000, guid: 79cbf6dd1b5ebf54ebe744caf04df62f, type: 2}
 --- !u!4 &995852039
 Transform:
   m_ObjectHideFlags: 0

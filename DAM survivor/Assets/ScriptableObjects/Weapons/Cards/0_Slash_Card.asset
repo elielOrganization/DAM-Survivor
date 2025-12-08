@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b773a6033f433f48a8741aff8d924eb, type: 3}
-  m_Name: mas
+  m_Name: 0_Slash_Card
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCardData
-  upgradeName: 
+  upgradeName: Slash
   description: 
   icon: {fileID: 0}
-  type: 1
-  targetId: OrbitalShield
+  type: 0
+  targetId: Slash
   levelIncrease: 1

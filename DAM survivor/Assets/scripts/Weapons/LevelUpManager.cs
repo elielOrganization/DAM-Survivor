@@ -21,24 +21,27 @@ public class LevelUpManager : MonoBehaviour
     public static bool IsLevelUpOpen { get; private set; }
 
     public void ShowLevelUpChoices()
+    {
+        IsLevelUpOpen = true;
+        levelUpPanel.SetActive(true);
+
+        // Limpiar cartas anteriores
+        foreach (Transform child in cardsParent)
+            Destroy(child.gameObject);
+
+        // Selecciona 3 cartas aleatorias
+        var selected = GetRandomCards(3);
+
+        // Crear las cartas en la UI
+        foreach (var card in selected)
         {
-            IsLevelUpOpen = true;
-            levelUpPanel.SetActive(true);
-
-            foreach (Transform child in cardsParent)
-                Destroy(child.gameObject);
-
-            var selected = GetRandomCards(3);
-            foreach (var card in selected)
-            {
-                var ui = Instantiate(cardPrefab, cardsParent);
-                ui.Setup(card, OnCardSelected);
-            }
-
-            Time.timeScale = 0f;   // pausa TODO
+            var ui = Instantiate(cardPrefab, cardsParent);
+            ui.Setup(card, OnCardSelected);
         }
-        
 
+        // Pausar el juego
+        Time.timeScale = 0f;
+    }
 
     UpgradeCardData[] GetRandomCards(int count)
     {
@@ -57,7 +60,6 @@ public class LevelUpManager : MonoBehaviour
         return result;
     }
 
-
     void OnCardSelected(UpgradeCardData card)
     {
         ApplyUpgrade(card);
@@ -66,79 +68,49 @@ public class LevelUpManager : MonoBehaviour
 
     void ApplyUpgrade(UpgradeCardData card)
     {
-        // Aquí llamas a tu sistema de armas / stats
-        // Ejemplo muy genérico:
-        switch (card.type)
+        WeaponManager wm = FindAnyObjectByType<WeaponManager>();
+        if (wm == null) return;
+
+        int slot = card.slotIndex;
+
+        // Si el slot está vacío → arma nueva
+        if (wm.weaponSlots[slot] == null)
         {
-            case UpgradeCardData.UpgradeType.NewWeapon:
-                WeaponManager wm = FindAnyObjectByType<WeaponManager>();
-                if (wm != null)
-                    AddWeaponById(wm, card.targetId);
-                break;
-
-            case UpgradeCardData.UpgradeType.WeaponLevelUp:
-                // Más adelante implementamos la mejora de nivel
-                break;
-
-            case UpgradeCardData.UpgradeType.Passive:
-                PlayerStats.Instance.AddPassive(card.targetId, card.levelIncrease);
-                break;
+            AddWeaponBySlot(wm, slot);
         }
-    void AddWeaponById(WeaponManager wm, string id)
+        else
+        {
+            // Si ya está ocupada → subir nivel
+            wm.weaponSlots[slot].LevelUp();
+        }
+    }
+
+    void AddWeaponBySlot(WeaponManager wm, int slot)
     {
-        // Busca el primer slot libre
-        int freeIndex = -1;
-        for (int i = 0; i < wm.weaponSlots.Length; i++)
-        {
-            if (wm.weaponSlots[i] == null)
-            {
-                freeIndex = i;
-                break;
-            }
-        }
-
-        if (freeIndex == -1)
-        {
-            Debug.Log("No hay slots libres para nuevas armas");
-            return;
-        }
-
         WeaponBase prefab = null;
 
-        // Aquí mapeas ids de las cartas a prefabs de WeaponManager
-        switch (id)
+        switch (slot)
         {
-            case "Slash":
-                prefab = wm.slashPrefab;
-                break;
-            case "FrostZone":
-                prefab = wm.frostZonePrefab;
-                break;
-            case "OrbitalShield":
-                prefab = wm.orbitalShieldPrefab;
-                break;
-            case "MagicWand":
-                prefab = wm.magicWandPrefab;
-                break;
+            case 0: prefab = wm.slashPrefab; break;
+            case 1: prefab = wm.frostZonePrefab; break;
+            case 2: prefab = wm.orbitalShieldPrefab; break;
+            case 3: prefab = wm.magicWandPrefab; break;
         }
 
         if (prefab == null)
         {
-            Debug.LogWarning("No se encontró prefab para id: " + id);
+            Debug.LogWarning("No hay prefab para el slot: " + slot);
             return;
         }
 
         WeaponBase instance = Instantiate(prefab, wm.transform.position, Quaternion.identity);
-        wm.AddWeapon(instance, freeIndex);
-    }
-
-
+        wm.AddWeapon(instance, slot);
     }
 
     void CloseLevelUp()
     {
         levelUpPanel.SetActive(false);
         IsLevelUpOpen = false;
-        Time.timeScale = 1f;   // reanuda TODO
+        Time.timeScale = 1f;  // reanudar
     }
 }
