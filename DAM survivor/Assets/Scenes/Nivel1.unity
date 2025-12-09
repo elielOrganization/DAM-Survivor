@@ -341,8 +341,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.24661855, y: 0.029645957, z: -0.007544602, w: -0.9686297}
-  m_LocalPosition: {x: 31.912981, y: 57.104736, z: 18.629883}
+  m_LocalRotation: {x: -0.53817445, y: 0.034615934, z: -0.02213003, w: -0.8418315}
+  m_LocalPosition: {x: 32.0672, y: 64.264336, z: 21.587831}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -405,7 +405,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CamraFollow
   player: {fileID: 882312590672880148}
-  suavizadoRotacion: 10
 --- !u!1001 &348863090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1829,6 +1828,10 @@ PrefabInstance:
       propertyPath: barraExp
       value: 
       objectReference: {fileID: 1590008197}
+    - target: {fileID: 5321648337173035503, guid: f6e622da7be199f42b6dac257102adcc, type: 3}
+      propertyPath: experienciaMaxima
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 8456096409102291524, guid: f6e622da7be199f42b6dac257102adcc, type: 3}
       propertyPath: m_UseGravity
       value: 1

@@ -40,7 +40,7 @@ public class PlayerExperiencia : MonoBehaviour
         nivel++;
 
         // Aquí puedes hacer que cada vez cueste más XP
-        experienciaMaxima += 20; // por ejemplo
+        experienciaMaxima += 200; // por ejemplo
 
         // Mostrar las cartas de mejora
         LevelUpManager.Instance.ShowLevelUpChoices();

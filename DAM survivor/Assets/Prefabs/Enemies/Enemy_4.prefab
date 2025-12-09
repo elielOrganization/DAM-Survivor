@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1784390467174268408}
   - component: {fileID: 4409865483680138750}
   - component: {fileID: 6604352426734997682}
+  - component: {fileID: 2238562854267906553}
+  - component: {fileID: -2598745555699414863}
   m_Layer: 0
   m_Name: Enemy_4
   m_TagString: Enemy
@@ -126,9 +128,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e4b9ae09dd6da478c69bdb25d247f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
-  hitFlash: {fileID: 0}
+  hitFlash: {fileID: 2238562854267906553}
   Stats: {fileID: 11400000, guid: b8ef1772a86e24640b2a409c4fb9d253, type: 2}
   exp: {fileID: 0}
   OrbeVerde: {fileID: 3635470169573753618, guid: beedf01ddb82bf24bb677e11e376d41e, type: 3}
   OrbeAzul: {fileID: 950793136257229478, guid: ce9689936c07e1a4cbdce32e4780ec5b, type: 3}
   OrbeDorado: {fileID: 7507683321997703250, guid: 5f17ebd2fd79b06448bab55191c67b7e, type: 3}
+--- !u!114 &2238562854267906553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6306100492901626551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6805c7c29a336b744b7fc7998b256cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitFlash
+  rend: {fileID: 1784390467174268408}
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.1
+--- !u!54 &-2598745555699414863
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6306100492901626551}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0

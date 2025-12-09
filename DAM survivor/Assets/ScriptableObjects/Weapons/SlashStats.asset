@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7054ec4543a86974cab0358921386ba0, type: 3}
   m_Name: SlashStats
   m_EditorClassIdentifier: Assembly-CSharp::WeaponStats
-  damagePerLevel: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a000000
+  damagePerLevel: 280000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a000000
   cooldownPerLevel:
   - 3
   - 1

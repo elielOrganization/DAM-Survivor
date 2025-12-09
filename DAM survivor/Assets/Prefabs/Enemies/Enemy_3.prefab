@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 3980032672144366098}
   - component: {fileID: 3899163784265810339}
   - component: {fileID: 8268000535006224225}
+  - component: {fileID: 3462330046897801496}
   - component: {fileID: 1864798254371661031}
   - component: {fileID: 3573371144438815004}
+  - component: {fileID: -6659793007080783687}
   m_Layer: 0
   m_Name: Enemy_3
   m_TagString: Enemy
@@ -91,6 +93,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3462330046897801496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6140176603693234429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6805c7c29a336b744b7fc7998b256cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitFlash
+  rend: {fileID: 8268000535006224225}
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.1
 --- !u!136 &1864798254371661031
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -126,9 +143,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e4b9ae09dd6da478c69bdb25d247f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
-  hitFlash: {fileID: 0}
+  hitFlash: {fileID: 3462330046897801496}
   Stats: {fileID: 11400000, guid: 080a6ca0d217c2e43953079cf765bf80, type: 2}
   exp: {fileID: 0}
   OrbeVerde: {fileID: 3635470169573753618, guid: beedf01ddb82bf24bb677e11e376d41e, type: 3}
   OrbeAzul: {fileID: 950793136257229478, guid: ce9689936c07e1a4cbdce32e4780ec5b, type: 3}
   OrbeDorado: {fileID: 7507683321997703250, guid: 5f17ebd2fd79b06448bab55191c67b7e, type: 3}
+--- !u!54 &-6659793007080783687
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6140176603693234429}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0

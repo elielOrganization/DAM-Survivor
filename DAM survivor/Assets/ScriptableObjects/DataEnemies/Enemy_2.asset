@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Enemy_2
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
   MaxHP: 100
-  Damage: 100
-  Defense: 20
+  Damage: 50
+  Defense: 5
   Speed: 5
