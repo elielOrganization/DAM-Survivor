@@ -27,7 +27,7 @@ public class DamageMagicWand : MonoBehaviour
         // Mover
         transform.position += dir * speed * Time.deltaTime;
 
-        // Si está muy cerca → impactar
+        // Si está muy cerca impactar
         if (Vector3.Distance(transform.position, target.position) < 0.3f)
         {
             EnemyController e = target.GetComponent<EnemyController>();

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class WeaponStats : ScriptableObject
 {
     [Header("Niveles del Arma")]
-    public List<int> damagePerLevel = new List<int>();            // nivel 1, 2, 3...
+    public List<int> damagePerLevel = new List<int>();         
     public List<float> cooldownPerLevel = new List<float>();
     public List<float> rangePerLevel = new List<float>();
     public List<float> projectileSpeedPerLevel = new List<float>();

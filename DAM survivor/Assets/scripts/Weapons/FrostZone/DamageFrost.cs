@@ -6,9 +6,7 @@ public class DamageFrost : MonoBehaviour
     private int damage;
     private float slowPercent;
     private float cooldown;
-
     private float timer = 0f;
-
     private List<EnemyController> enemigosDentro = new List<EnemyController>();
 
     public void Configure(int dmg, float slow, float cd)

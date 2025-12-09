@@ -9,7 +9,7 @@ public class PlayerExperiencia : MonoBehaviour
     public int experienciaMaxima = 100; // XP necesaria para subir de nivel
 
     [Header("UI")]
-    public Image barraExp; // Barra de experiencia (Image tipo Fill)
+    public Image barraExp; // Barra de experiencia
 
     void Start()
     {
@@ -39,8 +39,8 @@ public class PlayerExperiencia : MonoBehaviour
     {
         nivel++;
 
-        // Aquí puedes hacer que cada vez cueste más XP
-        experienciaMaxima += 200; // por ejemplo
+        // Hacer que cada vez cueste más XP
+        experienciaMaxima += 200; 
 
         // Mostrar las cartas de mejora
         LevelUpManager.Instance.ShowLevelUpChoices();

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HitFlash : MonoBehaviour
 {
-    public Renderer rend;            // arrastra aquí el MeshRenderer o SpriteRenderer
+    public Renderer rend;           
     public Color flashColor = Color.white;
     public float flashDuration = 0.1f;
 

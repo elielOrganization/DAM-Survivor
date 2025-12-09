@@ -1832,6 +1832,10 @@ PrefabInstance:
       propertyPath: experienciaMaxima
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 5765324460515754110, guid: f6e622da7be199f42b6dac257102adcc, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 85f262fb18af19241b640c0c8c6db28e, type: 2}
     - target: {fileID: 8456096409102291524, guid: f6e622da7be199f42b6dac257102adcc, type: 3}
       propertyPath: m_UseGravity
       value: 1

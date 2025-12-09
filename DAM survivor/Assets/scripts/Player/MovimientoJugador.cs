@@ -4,23 +4,28 @@ public class MovimientoJugador : MonoBehaviour
 {
     ///////////////////////////////////// VARIABLES /////////////////////////////////
     private bool puedeMoverse = true;
-    private float velocidadMovimiento = 5f;
+    private float velocidadMovimiento;
     private Vector2 direccionPlana;
 
     public Controles control;
-    public PauseMenu pauseMenu;   // ← arrastrar en el inspector
+    public PauseMenu pauseMenu;  
     public Transform camara;
 
-    // NUEVO: referencia al Rigidbody
+    // Referencia al Rigidbody
     private Rigidbody rb;
-    // NUEVO: guardamos la dirección de movimiento para usarla en FixedUpdate
+    // Guardamos la dirección de movimiento para usarla en FixedUpdate
     private Vector3 direccionMovimiento;
 
     ///////////////////////////////////// FUNCIONES UNITY /////////////////////////////////
     private void Awake()
     {
         control = new Controles();
-        rb = GetComponent<Rigidbody>();   // ← asegúrate de que el jugador tiene Rigidbody
+        rb = GetComponent<Rigidbody>();   
+    }
+
+    private void Start()
+    {
+        velocidadMovimiento = Player.Instance.stats.Speed;
     }
 
     private void OnEnable()
@@ -67,7 +72,7 @@ public class MovimientoJugador : MonoBehaviour
             {
                 direccionMovimiento.Normalize();
 
-                // ROTACIÓN SIGUE IGUAL
+                // ROTACIÓN
                 if (direccionPlana.y > 0.1f || direccionPlana.x != 0)
                 {
                     Quaternion rotacionDeseada = Quaternion.LookRotation(direccionMovimiento);
@@ -90,7 +95,7 @@ public class MovimientoJugador : MonoBehaviour
         }
     }
 
-    // NUEVO: movimiento físico en FixedUpdate
+    // Movimiento físico en FixedUpdate
     private void FixedUpdate()
     {
         if (!puedeMoverse || direccionMovimiento.sqrMagnitude <= 0.001f)

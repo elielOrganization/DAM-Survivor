@@ -18,9 +18,6 @@ public abstract class WeaponBase : MonoBehaviour
     {
         manager = mgr;
         cooldownTimer = 0f;
-
-        // Aquí podrías hacer algo con level si quieres más adelante
-        // De momento no tocamos stats, usamos los del ScriptableObject tal cual
     }
 
     // Se ejecuta cada frame desde el WeaponManager
@@ -30,8 +27,6 @@ public abstract class WeaponBase : MonoBehaviour
             cooldownTimer -= Time.deltaTime;
     }
 
-    // Subir nivel: por defecto solo aumenta el número,
-    // cada arma concreta decide qué hacer con ese nivel
     public virtual void LevelUp()
     {
         if (level >= maxLevel)
