@@ -5,8 +5,6 @@ using TMPro;
 public class UpgradeCardUI : MonoBehaviour
 {
     public Image iconImage;
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI descriptionText;
     public Button button;
 
     UpgradeCardData data;
@@ -17,8 +15,6 @@ public class UpgradeCardUI : MonoBehaviour
         data = cardData;
         onSelected = callback;
         iconImage.sprite = data.icon;
-        nameText.text = data.upgradeName;
-        descriptionText.text = data.description;
 
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(() =>

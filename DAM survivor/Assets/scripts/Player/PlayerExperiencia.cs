@@ -29,6 +29,11 @@ public class PlayerExperiencia : MonoBehaviour
 
         ActualizarBarra();
     }
+    public void MostrarBarraXP(bool mostrar)
+    {
+        if (barraExp != null)
+            barraExp.gameObject.SetActive(mostrar);
+    }
 
     void SubirNivel()
     {

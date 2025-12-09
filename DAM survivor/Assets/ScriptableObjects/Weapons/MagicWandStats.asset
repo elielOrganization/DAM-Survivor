@@ -12,13 +12,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7054ec4543a86974cab0358921386ba0, type: 3}
   m_Name: MagicWandStats
   m_EditorClassIdentifier: Assembly-CSharp::WeaponStats
-  damagePerLevel: 0a000000
+  damagePerLevel: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a000000
   cooldownPerLevel:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
   - 1
   rangePerLevel:
   - 6
+  - 10
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
   projectileSpeedPerLevel:
   - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  slashScalePerLevel: []
   slowPercentPerLevel: []
   orbCountPerLevel: 
-  maxTargetsPerLevel: 02000000
+  maxTargetsPerLevel: 02000000030000000200000002000000020000000200000002000000020000000200000002000000

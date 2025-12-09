@@ -12,9 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b773a6033f433f48a8741aff8d924eb, type: 3}
   m_Name: 0_Slash_Card
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCardData
+  slotIndex: 0
   upgradeName: Slash
-  description: 
-  icon: {fileID: 0}
-  type: 0
-  targetId: Slash
-  levelIncrease: 1
+  icon: {fileID: 21300000, guid: d0dc4f94892a894489805566cbc57dec, type: 3}

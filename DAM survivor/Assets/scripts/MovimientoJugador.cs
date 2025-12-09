@@ -8,15 +8,19 @@ public class MovimientoJugador : MonoBehaviour
     private Vector2 direccionPlana;
 
     public Controles control;
-
     public PauseMenu pauseMenu;   // ← arrastrar en el inspector
-
     public Transform camara;
+
+    // NUEVO: referencia al Rigidbody
+    private Rigidbody rb;
+    // NUEVO: guardamos la dirección de movimiento para usarla en FixedUpdate
+    private Vector3 direccionMovimiento;
 
     ///////////////////////////////////// FUNCIONES UNITY /////////////////////////////////
     private void Awake()
     {
         control = new Controles();
+        rb = GetComponent<Rigidbody>();   // ← asegúrate de que el jugador tiene Rigidbody
     }
 
     private void OnEnable()
@@ -32,9 +36,9 @@ public class MovimientoJugador : MonoBehaviour
     void Update()
     {
         if (LevelUpManager.IsLevelUpOpen)
-        return;
+            return;
+
         // ----- PAUSA -----
-        // si la acción Pause se ha pulsado este frame
         if (control.Player.pause.triggered)
         {
             if (pauseMenu.juegoPausado)
@@ -57,23 +61,42 @@ public class MovimientoJugador : MonoBehaviour
             rightCam.Normalize();
 
             // Movimiento relativo a la cámara
-            Vector3 direccionMovimiento = forwardCam * direccionPlana.y + rightCam * direccionPlana.x;
+            direccionMovimiento = forwardCam * direccionPlana.y + rightCam * direccionPlana.x;
 
             if (direccionMovimiento.sqrMagnitude > 0.001f)
             {
                 direccionMovimiento.Normalize();
-                transform.position += direccionMovimiento * velocidadMovimiento * Time.deltaTime;
 
-                // Solo rotar si el input es hacia adelante
+                // ROTACIÓN SIGUE IGUAL
                 if (direccionPlana.y > 0.1f || direccionPlana.x != 0)
                 {
                     Quaternion rotacionDeseada = Quaternion.LookRotation(direccionMovimiento);
-                    transform.rotation = Quaternion.Slerp(transform.rotation, rotacionDeseada, 10f * Time.deltaTime);
+                    transform.rotation = Quaternion.Slerp(
+                        transform.rotation,
+                        rotacionDeseada,
+                        10f * Time.deltaTime
+                    );
                 }
-                // Si el input es solo hacia atrás, no rota
             }
-
+            else
+            {
+                // si no hay input, no movemos al rigidbody
+                direccionMovimiento = Vector3.zero;
+            }
         }
+        else
+        {
+            direccionMovimiento = Vector3.zero;
+        }
+    }
+
+    // NUEVO: movimiento físico en FixedUpdate
+    private void FixedUpdate()
+    {
+        if (!puedeMoverse || direccionMovimiento.sqrMagnitude <= 0.001f)
+            return;
+
+        rb.MovePosition(rb.position + direccionMovimiento * velocidadMovimiento * Time.fixedDeltaTime);
 
     }
 }
