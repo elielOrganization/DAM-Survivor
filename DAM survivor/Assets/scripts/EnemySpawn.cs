@@ -60,8 +60,9 @@ public class EnemySpawn : MonoBehaviour
 
     private void SpawnEnemy(GameObject enemy)
     {
-        Vector2 randomPos = Random.insideUnitCircle * spawnRadius;
-        Vector3 spawnPos = player.position + new Vector3(randomPos.x, 0f, randomPos.y);
+        // Dirección aleatoria hacia fuera
+        Vector2 dir = Random.insideUnitCircle.normalized;  
+        Vector3 spawnPos = player.position + new Vector3(dir.x, 0f, dir.y) * spawnRadius;
 
         Instantiate(enemy, spawnPos, Quaternion.identity);
     }
