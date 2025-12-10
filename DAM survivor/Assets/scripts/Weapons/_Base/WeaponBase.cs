@@ -12,6 +12,7 @@ public abstract class WeaponBase : MonoBehaviour
     [Range(1, 10)]
     public int level = 1;
     private int maxLevel = 10;
+    public bool IsMaxLevel => level >= maxLevel;
 
     // Inicialización del arma cuando se equipa
     public virtual void Initialize(WeaponManager mgr)

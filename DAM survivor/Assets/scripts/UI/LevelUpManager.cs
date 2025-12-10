@@ -32,6 +32,14 @@ public class LevelUpManager : MonoBehaviour
         // Selecciona 3 cartas aleatorias
         var selected = GetRandomCards(3);
 
+        // ➤ CAMBIO MÍNIMO: si no hay cartas disponibles, cerrar y no pausar el juego
+        if (selected.Length == 0)
+        {
+            levelUpPanel.SetActive(false);
+            IsLevelUpOpen = false;
+            return;
+        }
+
         // Crear las cartas en la UI
         foreach (var card in selected)
         {
@@ -43,22 +51,40 @@ public class LevelUpManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+
     UpgradeCardData[] GetRandomCards(int count)
     {
-        int max = Mathf.Min(count, allCards.Length);
-        UpgradeCardData[] result = new UpgradeCardData[max];
+        WeaponManager wm = FindAnyObjectByType<WeaponManager>();
 
-        var pool = new System.Collections.Generic.List<UpgradeCardData>(allCards);
+        var pool = new System.Collections.Generic.List<UpgradeCardData>();
+
+        foreach (var card in allCards)
+        {
+            var weapon = wm.weaponSlots[card.slotIndex];
+
+            // Si NO existe → se puede conseguir
+            // Si existe pero NO está maxeada → se puede subir
+            if (weapon == null || !weapon.IsMaxLevel)
+                pool.Add(card);
+        }
+
+        if (pool.Count == 0)
+            return new UpgradeCardData[0];
+
+        int max = Mathf.Min(count, pool.Count);
+        UpgradeCardData[] result = new UpgradeCardData[max];
 
         for (int i = 0; i < max; i++)
         {
             int index = Random.Range(0, pool.Count);
             result[i] = pool[index];
-            pool.RemoveAt(index);   // evita repetidas
+            pool.RemoveAt(index);
         }
 
         return result;
     }
+
+    
 
     void OnCardSelected(UpgradeCardData card)
     {
