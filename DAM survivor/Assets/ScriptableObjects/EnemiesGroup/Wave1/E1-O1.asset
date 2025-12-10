@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyGroupData
   enemyPrefab: {fileID: 2790479158087932266, guid: 5b6894471f12ff34dab9784c7b0b1e72, type: 3}
   cantidadTotal: 12
-  cantidadPorRonda: 12
+  cantidadPorRonda: 1
   cadencia: 5
   oleadaInstantanea: 0
